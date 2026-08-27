@@ -1,7 +1,3 @@
-HW 0 - due today (what to submit?)
-
-
-
 HW 1 - due Tuesday, September 1
     be sure to explain your reasoning when asked
     on logic puzzles, should be clear why your answer is the only  
@@ -44,7 +40,15 @@ else {
 
 
 --> is it possible for "statements2" to execute?7
+if must be false
+    x>=3 && y<=4
 
+else if must be true
+    both sides true
+
+together:   x would need to be 3 or 4
+            y must be <= 4 AND == 7 (not possible)
+            ***TAKEAWAY: don't write impossible conditions
 
 
 
@@ -63,12 +67,16 @@ Bob says, "Neither Ava nor I are knaves."
 
 
 What does "neither" mean?
+both false.
 
-
-Rewrite Bob:
-
+Rewrite Bob: Ava is not a knave AND I am not a knave.
+             Ava is a knight AND I am a knight.
 
 What are Ava and Bob? 
+    Ava: knight, Bob: knave    ANSWER 
+
+Ava = Knight?   Bob is a knave. So Bob's statement is correctly false.      CORRECT 
+Ava = Knave?    Bob is a knight. So Bob's statement is incorrectly false. 
 
 
 ////////////////////////////////////////////////////////
@@ -83,11 +91,15 @@ What types are Sarah, Bill, and Mae?
 
 
 (How might we simplify everything?)
+Sarah: Bill is a knight.
+Bill:  Mae is a knight.
+Mae:   Bill would tell you that I am a knave.
 
+Sarah - knight: Bill is a knight, so Mae is a knight. But then Mae is impossibly lying. Doesn't work.
+Sarah - knave:  Bill is a knave, so Mae is a knave. Bill would actually lie and say Mae is a knight. Mae would lie about what bill would 
+                say which means this is valid. 
 
-    
-
-
+ANSWER: Sarah: knave, Bill: knave, Mae: knave
 ////////////////////////////////////
 
 Lion always lies on Mondays, Tuesdays, and Wednesdays.
@@ -100,8 +112,10 @@ On Sunday, everyone tells the truth.
 Lion says: "Yesterday was one of my lying days."
 Unicorn says: "Yesterday was one of my lying days, too."
 
-What day is it?
-
+What day is it?         only 7 possible days
+    Sunday?  both tell the truth. impossible. They didn't both lie on Saturday.
+    Tuesday? Lion lies, Unicorn truth. Doesn't work because yesterday was actually one of lions lying days so he should lie about that.
+    Thursday works because lion lies on thursdays and would be lying. unicorn lies on thursdays and would be lying as well. 
 
 
 ////////////////////////////////
@@ -121,12 +135,7 @@ The second one says: "I'm Tweedledee."
 
 Which is which? What day is it?
 
-
-
-
-
-
-
+    It's Sunday and they are who they say they are (because Sunday is the only day where they won't both give the same name).
 
 //////////////////////////////////
 
@@ -150,9 +159,12 @@ You don't know what day it is, but are sure that it isn’t
 The first one says: "Tweedledee owns the rattle."
 The second one says: "I'm Tweedledee!"
 
-Who gets the rattle?
+Who gets the rattle?    -> THE FIRST TWIN
 
-Who is who?
+Case 1: Twin 1 is truth. so tweedledee owns the rattle and the second one is tweedledum. so twin 1 gets the rattle.
+Case 2: Twin 1 is false. so tweedledum owns the rattle and the second one is tweedledee. so twin 1 gets the rattle. 
+
+Who is who?   -> not enough information.
 
 
 ///////////////////////////////////////////
@@ -169,12 +181,11 @@ Gold casket: "The portrait is in this casket."
 Silver casket: "The portrait is not in this casket."
 Lead casket: "The portrait is not in the gold casket."
 
-Where is the portrait?
+Where is the portrait? SILVER
 
-
-
-
-
+Gold contains:   gold true. silver true, lead false. doesn't work because more than one is true
+Silver contains: gold false, silver false. works
+lead contains: gold false. silver true. lead true. not possible.
 
 ///////////////////////////////////
 
@@ -200,16 +211,24 @@ Cheryl privately tells Bernard her birthday day (number).
 Albert says: "I don't know when Cheryl's birthday is,
     but I know Bernard doesn't know too."
 
+    Must be a month with no unique days, otherwise Bernard would know automatically.
+    if the day was 19, Bernard would know, so we can eliminate May. 
+    if the day was 18, Bernard would know, so we can eliminate June.
+
+
 Bernard says: "At first I didn't know when Cheryl's
     birthday is, but now I do."
 
+    Bernard knows it's not May or June because of what Albert said. 
+    Can't be a non-repeating day or Bernard wouldn't be sure. (July 14 or Aug 14)
+    
 
 Albert says: "Then I also know when Cheryl's birthday is."
-
+    Albert knows it's in July. Can't be August because there's more than one day.
 
 When is it?
 
-
+JULY 16
 
 
 ///////////////////////////////////
