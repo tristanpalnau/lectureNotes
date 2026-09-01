@@ -8,7 +8,6 @@ Homework 1 due tonight
     What are the possible cases?
     How to check if a possible case works?
 
-
 **Make sure to save your files!!!
 
 I'll post Homework 2 after class (due Tues Sep 8)
@@ -36,37 +35,33 @@ Variables can be true or false
 
 Basic operations:
 
-∧   
-∨   
-¬   
-→   
-
+∧   : AND
+∨   : OR
+¬   : NOT
+→   : implies
 
 Basic logic gates (draw on board)
 
-
 gates still used to design circuits
 
-
 why do we care about equivalent circuits?
-
+    less money, less space
 
 what about programming?
+    easier to read/maintain
 
 ///////////////////////////////////////////////////
 
 Fill in basic operations:
 
-
 AND:
 
 p q  #  p ∧ q
 --------------
-T T  #    
-T F  #    
-F T  #     
-F F  #    
-
+T T  #    T
+T F  #    F
+F T  #    F
+F F  #    F
 
 OR:
 
@@ -76,7 +71,6 @@ T T  #
 T F  #    
 F T  #    
 F F  #    
-
 
 NOT:
 
@@ -96,7 +90,6 @@ IMPLIES operator →
 
     p → q
 
-
 It is false if we have BROKEN A PROMISE.
 Otherwise it is true.
 
@@ -111,7 +104,9 @@ F F  #
 
 How does the implies operator relate to programming?
 
-
+if (condition) {
+    promise will happen
+}
 
 //////////////////////////////////////////
 
@@ -119,17 +114,12 @@ Design circuits for:
 
 ¬(p ∨ q)       (p NOR q)
 
-
 p XOR q (with just the gates we've seen, not a specific XOR gate)
-
-
 
 /////////////////////////////////////
 
 How would we evaluate the output of these circuits with
 different inputs?
-
-
 
 Graphically build circuits:
 
@@ -153,19 +143,19 @@ Consider ¬p ∨ q ∧ r.
 
 --> what operation do we do first?
 
-
-
 Order of operations
 
 In math?
-
-
-
 
 For logic statements:
 
 From highest (happens first) to lowest (happens last) precedence:
 
+        ()
+        !
+        AND
+        OR
+        implies
 
 ////////////////////////////////////////////////
 
@@ -174,21 +164,17 @@ From highest (happens first) to lowest (happens last) precedence:
 
 Given this statement:
 
-    ¬p ∨ q ∧ r
-
+    ((¬p) ∨ (q ∧ r))
 Add () to show the order of operations.
-
-
-
 
 Evaluate the above statement using these
 variable assignments:
 
-p is T
-q is F
-r is F
+p is T  
+q is F  
+r is F  
 
-
+    ((¬T) ∨ (F ∧ F))     false
 
 ///////////////////////////////////////////
 
@@ -196,14 +182,7 @@ Consider ¬p ∨ q → p ∧ ¬q
 
 --> what operation do we do first?
 
-
-
-
 Add () to show the order of operations.
-
-
-
-
 
 Evaluate the above statement using these
 variable assignments:
@@ -212,28 +191,20 @@ p is T
 q is F
 r is F
 
-
-
-
-
 ////////////////////////////////////////////////
 
 Order of operations
     ¬ evaluates right to left
-        ¬¬p is equivalent to....
+        ¬¬p is equivalent to....  !(!p)
 
 
     ∧ and ∨ evaluate left to right
-        p ∧ q ∧ r is equivalent to....
-        p ∨ q ∨ r is equivalent to....
+        p ∧ q ∧ r is equivalent to....   (p and q) and r
+        p ∨ q ∨ r is equivalent to....   (p or  q) or  r
 
 
     → evaluates right to left
-        p → q → r is equivalent to....
-
-
-
-
+        p → q → r is equivalent to....    p -> (q -> r)
 
 //////////////////////////////////////////
 
@@ -283,18 +254,12 @@ parse trees
 
 --> what is the "top-level operator" here?
 
-
-
+root is top-level operator
 
 --> draw one for p ∨ q ∧ r → ¬p → ¬q ∨ s
 
 
-
-
-
 --> expression trees
-
-
 
 ////////////////////////////////////////////////////
 
@@ -337,20 +302,19 @@ Contingent, contradictory, tautology
 
 
 
-contingent: 
+contingent: sometimes true sometimes false
 
-    Example? 
-
-
-
-contradictory:
-
-    Example? 
+    Example? p and q
 
 
-tautology:
+contradictory: always false
 
-    Example? 
+    Example? p and not p
+
+
+tautology: always true
+
+    Example? p or not p
     
 
 ///////////////////////////////////////////
