@@ -64,11 +64,14 @@ Propositional logic.
 - a set of propositional atoms (statements that can be T/F)
     --> these will be our boolean variables in logic statements
 
-
+atoms should be minimal.
+p: I am hungry and I am thirsty. (no)
+p: I am hungry 
+q: I am thirsty
 
 - connected by logical operators
 
-
+p & q
 
 - join together to make new propositions (logical sentences)
     that can be true or false
@@ -80,22 +83,22 @@ Propositional logic.
 Which ones are propositions?
 
 Today is Thursday.
-
+yes
 
 What time is it?
-
+no
 
 x == 2
-
+yes
 
 Pigs can fly.
-
+yes
 
 Drive carefully.
-
+no
 
 y <= 4
-
+yes
 
 
 ////////////////////////////////////////
@@ -109,17 +112,17 @@ Suppose we have these propositional atoms:
 
 How would we express these as English sentences/conditions?
 
-    ¬p:
+    ¬p: not below freezing
 
-    p ∧ q:
+    p ∧ q: below freezing and snowing
 
-    p → q :
+    p → q : if it's below freezing, it's snowing
 
-    ¬p → ¬q:
+    ¬p → ¬q: if it's not below freezing, it's not snowing
 
-    r ∨ s:
+    r ∨ s:    y <= 4 || x == 2
 
-    ¬r:
+    ¬r:     y > 4
 
 
 ////////////////////////////////////////
@@ -134,19 +137,18 @@ the prerequisite or the course is full.
 
 --> what are the propositional atoms?
 
-
-
+p: you can enroll for the course
+q: you have taken the prerequisite
+r: the course is full
 
 --> translate to propositional logic:
 
-
+(!q || r) ->: !p
 
 What is the *contrapositive* of our statement?
 
-
-
-
-
+p -> !(!q && r)  // negate and swap
+p -> (q && !r)
 
 //////////////////////////////////////////
 ∧ ∨ ¬ → 
@@ -161,14 +163,15 @@ if (x <= 2 || y >= 0) {
 }
 
 Propositional atoms?
-
+p: x <= 2
+q: y >= 0
+r: z == 17
+s: answer = 25
 
 
 Translation? (if ... then ...)
 
-
-
-
+(p || q) && r ->: s
 
 //////////////////////////////////
 
@@ -178,23 +181,19 @@ p: I am at least 16 years old
 q: I can drive a car
 
 1) If I am at least 16 years old, then I can drive a car.
-
+p ->: q
 
 
 2) I'm not at least 16 years old or I can drive a car.
-
+!p || q
 
 
 
 --> are they saying the same thing?
-
-
-
+no.
+incorrect. they actually are. use the logika truth table to check and verify.
 
 --> could we PROVE it? (equiv1.logika, equiv2.logika)
-
-
-
 
 //////////////////////////////////
 

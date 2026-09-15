@@ -22,29 +22,36 @@ if ((y >= 4 || num != 14) && x > 0) {
 
 //////////////////////////
 
+truth tables classification:
+    contingent - mix of true and false
+    contradictory - always false
+    tautology - always true
+
 Satisfiability.
 
 - definition: a proposition is satisfiable if we can
     find a truth assignment that makes the statement true
 
-
-
 - what kind of statement is satisfiable? what kind is not?
-
-
-
+    satisfiable: tautology, contingent
+    not satisfiable: contradictory
 
 - is this satisfiable?
 
     (p ∨ ¬q) ∧ (q ∨ ¬r) ∧ (r ∨ ¬p)
 
-
+p: T
+q: T
+r: T
 
 to show a statement is satisifiable: 
-
+    Show one Truth Assignment which outputs True.
+    *could* fill in a truth table if you wanted to.
 
 to show a statement is NOT satisfiable: 
-
+    Show that no Truth Assignment ouputs True.
+    *must* fill in a truth table.
+    need to show it is contradictory.
 
 ////////////////////////////////
 ∧ ∨ ¬ →
@@ -91,15 +98,26 @@ I want to prove:
 
 
 Propositional atoms:
-
-
+    p: I am in the CS dept
+    q: I am in the ECE dept
+    r: I can log in to the CS lab computers
 
 Translations:
-
-
+    - p | q
+    - !q
+    - p -> r
 
 --> How to prove with a truth table?
+    - r & p
 
+Premises:
+    p | q
+    !q
+    p -> r
+
+Conclusion: r & p
+
+Valid: every truth assignment that makes all the premises true also makes the conclusion true
 
 
 
