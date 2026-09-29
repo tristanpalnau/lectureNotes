@@ -11,9 +11,7 @@ import org.sireum.justification.natded.prop._
         (a) |- (b | a | c)
         Proof(
             //PROOF GOES HERE
-            1 ( a )     by Premise,
-            2 ( b | a ) by OrI2(1),
-            3 ( b | a | c ) by OrI1(2)
+            1 ( a )     by Premise
         )
     )
 }
