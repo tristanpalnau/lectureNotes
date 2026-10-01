@@ -20,6 +20,16 @@ p → q   equivalent to   ¬p ∨ q
 
 
 p → q  ⊢  ¬p ∨ q
+    
+    try PbC
+        assume !( !p | q )
+            can we get  !p | q ?
+                try NegI to get !p
+                    assume ( p )
+                    ( q ) by ImplyE
+                    F by Neg
+
+        goal: get a contradiction
 
      
 
@@ -42,6 +52,9 @@ HW 4 problem 7
 
 ¬(p → q)  ⊢  p ∧ ¬q
 
+    Try PbC, assume !(p & !q)
+        goal: contradiction
+        try to get p __>: q to contradict with the premise
 
 
 
@@ -62,37 +75,55 @@ How do we approach proofs?
 3. Look at what you are trying to prove 
     (what do we look for in goal/conclusion?)
 
-    ∧ - 
+    ∧ - try AndI, think of two sides as separate proofs
 
-    ∨ -   
+    ∨ - see if we can get one of the sides, then use OrI
+        we often have another OR statement - try OrE before ever trying PbC
 
-    → - 
+    → - ALWAYS follow ImplyI pattern
 
-    ¬(something) - 
+    ¬(something) - ALWAYS follow NegI pattern
 
     just a propositional atom? like p.
+    p | q |- p
+    see where it shows up in the premises, what do we need to do to get it?
+    see if you have an OR, try OrE
+    if nothing else works, try PbC
 
 
-After each claim - 
+After each claim - scan previous claims, see if we can extract more info
 
 
 
 Inside a subproof - 
     (What are the different subproofs?)
+        OrE - both need same conclusion
+        ImplyI - assume the LHS, end with RHS
+        NegI - F
+        PbC - F
+
+        ALWAYS have one of these in mind
 
     --> when do we open a subproof?
+        
 
     --> can we assume anything in a subproof? 
+    SubProof(
+        Assume (anything)
+    ),
+    // 
 
+    always write your goal for the subproof as a note to yourself!
 
 
 
 Doesn't fit a pattern or doesn't work out from above?
-
+    PbC
 
 
 When to use BottomE?
-
+    get F, conclude anything
+    use very rarely, last line of defense
 
 
 
@@ -134,25 +165,25 @@ SOUNDNESS and COMPLETENESS of natural deduction in
     "true": demonstrate an argument with truth tables
 
 
-SOUNDNESS: ??
+SOUNDNESS: if all arguments that are provable are actually true
 
 p ∧ q 
 --------
 p
 
 
-COMPLETENESS: ??
+COMPLETENESS: if all true arguments are provable
 
 
 
 
 
 --> what would it mean if a proof system was unsound?
-
+    I could prove untrue things. not good.
 
 
 --> what would it mean if a proof system was incomplete?
-
+    there are true arguments that I couldn't prove.
 
 
 
