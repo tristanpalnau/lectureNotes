@@ -46,11 +46,11 @@ Describe these sets in set builder notation
 
 {2,4,8,16,32}
 
-
+{x: x = 2^k, k element N, k <= 5}
 
 {13, 19, 25, 31, 37, 43}
 
-
+{x: x = 7 + 6k, k element N, k <= 6}
 
 ///////////////////////////////////////
 ∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
@@ -65,7 +65,7 @@ of all elements....
 
 How could we express in set builder notation?
 
-A ⋃ B = ?
+A ⋃ B = {x : x ∈ A ⋁ x ∈ B}
 
 
 Show as a Venn diagram.
@@ -82,7 +82,7 @@ of all elements that are...
 
 How could we express in set builder notation?
 
-A ⋂ B = ?
+A ⋂ B = {x : x ∈ A ⋀ x ∈ B}
 
 
 Show as a Venn diagram.
@@ -94,12 +94,12 @@ Set difference, -
 / or \ (means the same thing)
 
 The difference between the sets A and B, written A - B, 
-    is the set of all elements...
+    is the set of all elements... in A but not in B
 
 
 How could we express in set builder notation?
 
-A - B = ?
+A - B = {x : x ∈ A ⋀ x ∉ B}
 
 
 Show as a Venn diagram.
@@ -137,20 +137,21 @@ How does A - B relate to A ⋂ B?
 
 
 
+
 What do we know if A ⋂ B = A ⋃ B?
 
-
+A = B
 
 
 What do we know if A - B = A?
 
-
+A ⋂ B = ∅
 
 
 
 What do we know if A - B = B - A?
 
-
+Same set or both empty sets
 
 //////////////////
 
@@ -192,17 +193,19 @@ B = {1,3,5,8}
 
 Quantifiers - helps describe all or some elements in a set
 
-    ∀ - ?
+    ∀ - universal quantifier, "for all", "all"
+        describing something about ALL eliments in a set
 
-    ∃ - ?
+    ∃ - existential quantifier, "there exists", "some", "at least one"
+        describes the existence of an element in a set with a particular quality
 
 
 
 Can we define that set A is a subset of set B using quantifiers?
 
-A ⊆ B means ...
+A ⊆ B means ... 
 
-
+    ∀ a ∈ A __>: a ∈ B
 
 
 How could we define that set A equals set B using quantifiers?
@@ -239,16 +242,16 @@ Example:
 
 A = {x : x ∈ ℕ ⋀ x^2 ≥ 25 }
 
+5
 
 
-
-P(x) = ?
+P(x) = x ∈ ℕ ⋀ x^2 ≥ 25
 
 What are these saying? Are they true?
 
-P(2) = 
-P(-6) =  
-P(10) = 
+P(2) = does two satisfy the criteria above? No.
+P(-6) =  no. not a natural number.
+P(10) = yes.
 
 
 
@@ -271,6 +274,9 @@ How would we prove this in propositional logic?
 
 What propositional atoms? What sequent?
 
+p: All humans are mortal.
+q: Socrates is human.
+r: Socrates is mortal.
 
 
 
@@ -284,11 +290,17 @@ individuals in a domain (a set)
 
 These claims will involve predicates and quantifiers
 
-Human(x)
-Mortal(x)
+domain: all living things
+
+Human(x) - whether x is human
+Mortal(x) - whether x is mortal
 
 
 ∀ x (Human(x) → Mortal(x))
+
+For all living things, if that living thing is human, then it is mortal.
+
+All humans are mortal.
 
 //////////////////
 
@@ -299,11 +311,14 @@ Example:
     Domain: {x : x is a student at K-State}
     C(x): whether x is in CIS 301
 
+    Bob and Jill are both students at K State.
+
     Bob is taking: CIS 300, CIS 301, ECE 241, MATH 221, ENGL 200
     Jill is taking: CIS 300, MATH 510, HIST 251, PHYS 213
 
 
     What is the value of C(Bob) ⋀ ¬C(Jill)? 
+    True.
 
 
 ////////////////
@@ -321,26 +336,31 @@ Wings(x): x has wings
 Carnivore(x): x is a carnivore
 
 
-Mammal(bat) -  ?
-Bird(bat) - ?
-Fish(bat) - ?
-Wings(bat) - ?
-Carnivore(bat)
+Mammal(bat) -  T
+Bird(bat) - F
+Fish(bat) - F
+Wings(bat) - T
+Carnivore(bat) - T
 
 Write each statement in English. Is each one true or false?
 
 ∀ x (Mammal(x))
 
-
+All animals in my domain are mammals. which is False.
 
     --> how could we express the same statement in our domain
     WITHOUT a quantifier?
 
-
+Mammal(bat) ^ Mammal(lion) ^ ... ^ Mammal(salmon)
 
 ///
 
 ∃ x (Mammal(x) ⋀ Carnivore(x))
+
+There exists an animal which is a mammal and a carnivore in our domain.
+
+True. A lion.
+
 
     --> how could we express the same statement in our domain
     WITHOUT a quantifier?
