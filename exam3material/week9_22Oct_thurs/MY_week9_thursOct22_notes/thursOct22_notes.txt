@@ -11,20 +11,20 @@ Today:
 Soundness and completeness of predicate logic.
 
 
-Soundness: definition?
+Soundness: definition? Everything we could prove with deduction was actually true.
 
-    propositional logic?
+    propositional logic? yes
 
-    predicate logic?
-
-
+    predicate logic? yes
 
 
-Completeness: definition?
 
-    propositional logic?
 
-    predicate logic?
+Completeness: definition? We can use deduction to prove all true/valid arguments
+
+    propositional logic? yes
+
+    predicate logic? no
 
 
 
@@ -39,10 +39,10 @@ Same argument might be VALID in one domain and INVALID in another
 Domain with integers with operations like +
 
 
-All integers? 2 + 3 = ?
+All integers? 2 + 3 = ?  5
 
 
-Subset (0,1,2,3,4) of integers. 2 + 3 = ?
+Subset (0,1,2,3,4) of integers. 2 + 3 = ?  0 (wrap around)
 
 
 
@@ -97,9 +97,9 @@ The induction domino effect:
 
 
 What is this saying?
-    P(1)? 
+    P(1)? the claim is true for n = 1
 
-    ∀ k (P(k) → P(k+1))? 
+    ∀ k (P(k) → P(k+1))? for all k, if it's true for one P(k) then it's true for P(k+1)
 
 
 
@@ -110,13 +110,21 @@ Putting it all together:
 English translation?
 
 
-How will we prove P(1)?
+How will we prove P(1)? 
+    choose 1st element in domain and show that claim holds for it.
+                                                                        BASE CASE
 
 
 How will we prove ∀ k (P(k) → P(k+1))? 
     (How would we prove this for-all statements in predicate logic?)
+                                                                        INDUCTIVE STEP
 
-
+    
+    AllI
+    Pick a random individual, k, in my domain
+        ImplyI
+        Assume P(k)                                            <------- INDUCTIVE HYPOTHESIS
+        ...try to get P(k+1)
 
 ////////////////////////////////////
 
@@ -131,11 +139,24 @@ We want to prove that for any positive integer n:
     1 + 2 + ... + n = n*(n+1)/2
 
 
+The above claim is P(n)
 
 
 Proof by induction.
 
+BASE CASE: We must prove the claim holds for the first positive integer n. 
+n = 1. We have that the left side of the claim is 1 and the right side is 1*1+1/2 = 1.
+The two sides are equal so the base case holds.
 
+INDUCTIVE STEP: We assume the inductive hypothesis - that 1 + 2 + ... + k = (k*k)+1/2 for some fixed positive integer k.
+We must show that our claim holds for k+1. That is, we must show that: 
+1 + 2 + ... + k + (k+1) = ((k+1)(k+1))+1/2
+
+We have that:
+    1 + 2 + ... + k + (k+1) = (k*k)+1/2 + (k+1) (by inductive hypothesis)
+                            = ... recall
+                            ...
+                            = ((k+1)(k+1))+1/2
 
 /////////////////////////////////
 
